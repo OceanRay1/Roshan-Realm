@@ -1,0 +1,89 @@
+body {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+}
+
+.circle-photo {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.custom-emoji-list strong {
+  color: #24ad72 !important;
+  font-weight: 700 !important;
+  display: inline-block;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.custom-emoji-list {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #171c19;
+  text-align: left !important;
+}
+
+.custom-emoji-list li {
+  margin-bottom: 0.6rem;
+  white-space: normal;
+}
+
+.custom-list li {
+  font-size: 1.125rem;
+  color: #171c19;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.custom-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #1a382b;
+  font-weight: bold;
+}
+
+/* Color Scheme */
+.realm-green {
+  color: #09eb89 !important;
+}
+
+.realm-dgreen {
+  color: #24ad72 !important;
+  font-weight: 700 !important;
+}
+
+.btn-outline-secondary {
+
+    border-color: #08c875 !important;
+    color: #08c875 !important;
+}
+
+.btn-outline-secondary:hover{
+    background: #24ad72 ;
+    border-color: #08c875 !important;
+    color: #08c875 !important;
+}
