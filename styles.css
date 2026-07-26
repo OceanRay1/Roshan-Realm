@@ -1,89 +1,84 @@
+:root { --bg-color: #ffffff; --text-color: #171c19; }
+[data-theme="dark"] { --bg-color: #121212; --text-color: #e4e4e7; }
+
 body {
     width: 80%;
     margin: auto;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header {
-    text-align: center;
-}
+header { text-align: center; }
+nav > ul { list-style: none; display: flex; align-items: center; justify-content: center; gap: 20px; }
+nav > ul > li > a { text-decoration: none; }
 
-nav > ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
+.circle-photo { width: 450px; height: 450px; border-radius: 50%; object-fit: cover; }
+.container { width: 90%; max-width: 800px; margin: 0 auto; }
 
-nav > ul > li > a {
+.custom-emoji-list { font-size: 1.05rem; line-height: 1.8; color: #171c19; text-align: left !important; }
+.custom-emoji-list li { margin-bottom: 0.6rem; white-space: normal; }
+
+.custom-list li { font-size: 1.125rem; color: #171c19; margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
+.custom-list li::before { content: "—"; position: absolute; left: 0; color: #1a382b; font-weight: bold; }
+
+.text-body-emphasis, h1, h2, h3, h4, h5, h6, p, li { color: var(--text-color) !important; }
+.realm-green, h1.realm-green { color: #09eb89 !important; }
+.realm-dgreen, .custom-emoji-list strong { color: #24ad72 !important; }
+
+.btn-outline-secondary { border-color: #08c875 !important; color: #08c875 !important; }
+.btn-outline-secondary:hover { background: #24ad72; border-color: #08c875 !important; color: #08c875 !important; }
+
+#theme-toggle {position: fixed; top: 20px; right: 20px; z-index: 9999;}
+
+.inline-btn-link {
     text-decoration: none;
+    display: inline; 
 }
 
-.circle-photo {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  object-fit: cover;
+.inline-btn-link strong {
+    color: #24ad72 !important;
+    padding: 1px 4px; 
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.custom-emoji-list strong {
-  color: #24ad72 !important;
-  font-weight: 700 !important;
-  display: inline-block;
+.inline-btn-link:hover strong {
+    background-color: rgba(36, 173, 114, 0.15);
+    color: #09eb89 !important;
 }
 
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
+.interests-container {
+    display: flex;
+    justify-content: center; 
 }
 
 .custom-emoji-list {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #171c19;
-  text-align: left !important;
+    text-align: left !important; 
 }
 
-.custom-emoji-list li {
-  margin-bottom: 0.6rem;
-  white-space: normal;
+.rotating-interests-container {
+    position: relative;
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 0rem; 
 }
 
-.custom-list li {
-  font-size: 1.125rem;
-  color: #171c19;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
+.rotating-item {
+    position: absolute;
+    font-size: 2rem; 
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
-.custom-list li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: #1a382b;
-  font-weight: bold;
-}
-
-/* Color Scheme */
-.realm-green {
-  color: #09eb89 !important;
-}
-
-.realm-dgreen {
-  color: #24ad72 !important;
-  font-weight: 700 !important;
-}
-
-.btn-outline-secondary {
-
-    border-color: #08c875 !important;
-    color: #08c875 !important;
-}
-
-.btn-outline-secondary:hover{
-    background: #24ad72 ;
-    border-color: #08c875 !important;
-    color: #08c875 !important;
+.rotating-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
