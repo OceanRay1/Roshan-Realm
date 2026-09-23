@@ -1,0 +1,374 @@
+/* Color theme */
+
+:root {
+  --bg-color: #121212;
+  --text-color: #e4e4e7;
+  --card-bg: #1e1e24;
+  --card-border: #2d2d34;
+  --timeline-line: #2d2d34;
+  --timeline-box-bg: #1e293b;
+  --timeline-box-border: #334155;
+  --accent-blue: #60a5fa;
+  --accent-green: #09eb89;
+  --text-muted: #94a3b8;
+  --text-secondary: #cbd5e1;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #171c19;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --timeline-line: #e2e8f0;
+  --timeline-box-bg: #f0f7ff;
+  --timeline-box-border: #e0f2fe;
+  --accent-blue: #3b82f6;
+  --accent-green: #24ad72;
+  --text-muted: #64748b;
+  --text-secondary: #475569;
+}
+
+/* Core styles and layout */
+
+body {
+  width: 80%;
+  margin: auto;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header { text-align: center; }
+#theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 9999; }
+
+/* Navigation row */
+nav > ul { list-style: none; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 0; }
+nav > ul > li > a { text-decoration: none; color: var(--text-color); }
+nav > ul > li > a:hover { color: var(--accent-green); }
+
+/* Profile asset */
+.circle-photo { width: 450px; height: 450px; border-radius: 50%; object-fit: cover; }
+
+/* Global font contrast force-fix */
+.text-body-emphasis, h1, h2, h3, h4, h5, h6, p, li, span { 
+  color: var(--text-color) !important; 
+}
+
+/* Brand accents and interactive components */
+.realm-green, h1.realm-green { color: #09eb89 !important; }
+.realm-dgreen { color: #24ad72 !important; }
+
+.btn-outline-secondary { border-color: #08c875 !important; color: #08c875 !important; }
+.btn-outline-secondary:hover { background: #24ad72; border-color: #08c875 !important; color: #08c875 !important; }
+
+/* Inline anchor highlight modifications */
+.inline-btn-link { text-decoration: none; display: inline; }
+.inline-btn-link strong {
+  color: var(--accent-green) !important;
+  padding: 1px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.inline-btn-link:hover strong {
+  background-color: rgba(36, 173, 114, 0.15);
+  color: #09eb89 !important;
+}
+
+/* Interactive rotating header component */
+.interests-container { display: flex; justify-content: center; }
+.rotating-interests-container {
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+.rotating-item {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.rotating-item.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+/* Multi-column resume timeline cards */
+.portfolio-card-section h2,
+.portfolio-card-section h3,
+.portfolio-card-section h4,
+.portfolio-card-section p,
+.portfolio-card-section ul {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-card-section {
+  max-width: 800px;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.centered-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Tracking line layout */
+.timeline-container { position: relative; padding-left: 2rem; }
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  width: 2px;
+  background-color: var(--timeline-line);
+}
+
+.timeline-item { position: relative; margin-bottom: 1.75rem; }
+.timeline-item:last-child { margin-bottom: 0; }
+
+/* Node rings */
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 1.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-blue);
+  border: 2px solid var(--card-bg);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  z-index: 1;
+}
+
+/* Light blue dynamic cards */
+.timeline-content {
+  background-color: var(--timeline-box-bg);
+  border: 1px solid var(--timeline-box-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* Two-column flex header integration */
+.resume-style-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+}
+.header-left-block { display: flex; flex-direction: column; gap: 0.15rem; }
+.header-right-block { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 0.15rem; }
+
+/* List typography controls */
+.degree { font-size: 1.15rem; font-weight: 700; }
+.institution { font-size: 1rem; font-weight: 500; color: var(--text-secondary) !important; }
+.location { font-size: 0.95rem; font-weight: 600; }
+.date { font-size: 0.9rem; font-weight: 500; color: var(--text-muted) !important; white-space: nowrap; }
+.timeline-content .details { font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary) !important; }
+
+/* Timeline nested bullets */
+.timeline-bullets { margin-top: 0.5rem; padding-left: 1.25rem; list-style-type: disc; }
+.timeline-bullets li { font-size: 0.9rem; line-height: 1.45; margin-bottom: 0.4rem; color: var(--text-secondary) !important; }
+.timeline-bullets li:last-child { margin-bottom: 0; }
+
+/* Interactive experience links */
+.title-link { text-decoration: none; color: inherit !important; transition: color 0.15s ease; }
+.title-link:hover { color: var(--accent-blue) !important; }
+
+/* Centered honors and awards cards */
+.centered-awards-container { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
+.award-centered-item {
+  background-color: var(--timeline-box-bg);
+  border: 1px solid var(--timeline-box-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+.award-title { font-size: 1.15rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; }
+.award-details { font-size: 0.9rem; line-height: 1.5; max-width: 650px; margin: 0 auto; color: var(--text-secondary) !important; }
+
+.award-bullets-centered { list-style-type: none; padding: 0; margin: 0 auto; max-width: 650px; }
+.award-bullets-centered li { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; color: var(--text-secondary) !important; }
+.award-bullets-centered li:last-child { margin-bottom: 0; }
+
+/* Responsive two-column media panes */
+@media (min-width: 768px) {
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .award-centered-item .entry-text-pane { text-align: center; }
+}
+
+.entry-media-pane { width: 100%; border-radius: 8px; overflow: hidden; }
+
+/* Phone stack downfalls */
+@media (max-width: 576px) {
+  body { width: 95%; }
+  .resume-style-header { flex-direction: column; gap: 0.25rem; }
+  .header-right-block { align-items: flex-start; text-align: left; }
+}
+
+/* Quick fix: work experience link shades */
+
+.title-link {
+  text-decoration: none;
+  color: #2563eb !important;
+  transition: color 0.15s ease-in-out;
+}
+
+.title-link:hover {
+  color: #3b82f6 !important;
+}
+
+/* Projects section two-column layout */
+.projects-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Side-by-side balanced splitting for large desktop screen viewports */
+@media (min-width: 768px) {
+  .projects-split-grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+/* Panel layout refinements */
+.project-panel-left, 
+.project-panel-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.panel-subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+}
+
+.project-narrative-text,
+.project-description-body {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary) !important;
+  margin-bottom: 1.25rem;
+}
+
+/* --- Honors & Awards Container --- */
+.centered-awards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Ensure items align nicely at the center vertically, preventing stretch */
+.award-centered-item {
+    display: flex;
+    align-items: center; /* Fixes vertical stretching */
+    gap: 2rem;
+}
+
+/* 50/50 Split */
+.award-centered-item > .entry-text-pane,
+.award-centered-item > .entry-media-pane {
+    flex: 1;
+    width: 50%;
+}
+
+/* Alternate row directions */
+.award-centered-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* --- FIX FOR STRETCHED IMAGES & MEDIA --- */
+.award-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust as needed to keep it proportional */
+    object-fit: cover;
+    border-radius: 8px; /* Optional: adds smooth corners */
+    display: block;
+}
+
+/* Fix for Video Wrappers */
+.video-aspect-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-aspect-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Mobile responsive layout: stack text and media vertically */
+@media (max-width: 768px) {
+    .award-centered-item,
+    .award-centered-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .entry-text-pane, 
+    .entry-media-pane {
+        width: 100%;
+    }
+}
+
+/* Guarantees dark/light mode compatible badge background */
+.badge.tech-badge, 
+.badge.bg-secondary {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+    border: 1px solid #495057;
+    border-radius: 0.375rem;
+}
+
+/* Light mode support if using a class/attribute toggle */
+[data-bs-theme="light"] .badge.tech-badge,
+body.light-mode .badge.tech-badge {
+    background-color: #e9ecef !important;
+    color: #212529 !important;
+    border: 1px solid #ced4da;
+}

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan's Realm</title>
+
+    <!-- Bootstrap CSS & JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- GitHub Calendar CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #FAF9F5;
+        }
+
+        /* Custom Dark Styling for the Live Calendar Widget */
+        .calendar {
+            border: none !important;
+            background: transparent !important;
+            color: #c9d1d9 !important;
+            font-family: inherit;
+            width: 100% !important;
+        }
+
+        .calendar .contrib-column,
+        .calendar .contrib-footer {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex justify-content-end p-3">
+            <button id="theme-toggle" class="btn btn-outline-secondary btn-sm">🌙 Dark Mode</button>
+        </div>
+        <section>
+            <div class="px-4 py-5 mt-4 text-center">
+                <img class="d-block mx-auto mb-4 circle-photo" src="assets.png/SoloPhoto.png" alt="" width="770"
+                    height="570">
+                <h1 class="display-5 fw-bold text-body-emphasis ">Hi! Welcome to...</h1>
+                <div class="container" style="max-width: 768px;">
+
+                    <!-- Header Info -->
+                    <div class="text-center mb-4">
+                        <h1 class="display-3 fw-bold realm-green lh-1 mb-3">Roshan's Realm</h1>
+                        <p class="lead mb-0">
+                            I'm a Dartmouth student interested in CS, Economics, & Math
+                        </p>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+                        <button type="button" onclick="window.location.href='https://github.com/OceanRay1';"
+                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">Github</button>
+                        <button type="button"
+                            onclick="window.location.href='https://www.linkedin.com/in/roshan-shivnani-730a9a2b0/';"
+                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">LinkedIn</button>
+                        <button type="button"
+                            onclick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=roshan.shivnani@gmail.com';"
+                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="open-source" class="container pt-2 pb-5" style="max-width: 1140px;">
+    <!-- 50/50 Equal Two-Column Grid -->
+    <div class="row g-4 align-items-stretch">
+
+        <!-- LEFT SIDE: GitHub Activity / Summary -->
+        <div class="col-lg-6">
+            <div class="p-4 rounded-4 shadow-sm border custom-card project-card h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success text-white px-2 py-1"
+                            style="font-size: 0.75rem; font-weight: 500;">Latest Project</span>
+                        <!-- Updated Tech Stack Badges to match button style -->
+                        <div class="d-flex gap-1">
+                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Python</span>
+                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">TypeScript</span>
+                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Scikit-Learn</span>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE PREVIEW CONTAINER -->
+                    <div class="project-img-container rounded-3 mb-3 border overflow-hidden shadow-sm"
+                        style="height: 140px;">
+                        <img src="assets.png/YieldGuard.jpg" alt="YieldGuard Project Preview"
+                            style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+
+                    <!-- TEXT SECTION -->
+                    <h3 class="fs-5 fw-bold mb-2 d-inline-block">
+                        <a href="https://yieldshield.pages.dev/" target="_blank" class="title-link text-decoration-none">YieldGuard:</a>
+                        <span class="project-subtitle fs-6 fw-normal ms-1">Macroeconomic False Alarm Filter</span>
+                    </h3>
+
+                    <p class="small project-description mb-3" style="line-height: 1.5;">
+                        ML-powered macroeconomic terminal trained on 50+ years of FRED data to filter
+                        false-positive yield curve inversion signals, achieving a <strong class="project-highlight">93% reduction in false positives</strong> over the baseline 10Y-3M model.
+                    </p>
+                </div>
+
+                <div class="mt-4 pt-3 project-card-footer">
+                    <a href="https://github.com/OceanRay1/Yield-Guard" target="_blank"
+                        class="btn btn-primary btn-sm w-100 fw-semibold">View Repo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Featured Project -->
+        <div class="col-lg-6">
+            <div class="p-4 rounded-4 shadow-sm border custom-card project-card h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success text-white px-2 py-1"
+                            style="font-size: 0.75rem; font-weight: 500;">Latest Coursework</span>
+                        <!-- Updated Tech Stack Badges to match button style -->
+                        <div class="d-flex gap-1">
+                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Python</span>
+                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">CS1Lib</span>
+                        </div>
+                    </div>
+
+                    <!-- IMAGE PREVIEW CONTAINER -->
+                    <div class="project-img-container rounded-3 mb-3 border overflow-hidden shadow-sm"
+                        style="height: 140px;">
+                        <img src="assets.png/Dartmouth.jpg" alt="Dartmouth Course Preview"
+                            style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    </div>
+
+                    <!-- TEXT SECTION -->
+                    <h3 class="fs-5 fw-bold mb-2">
+                        <a target="_blank" class="title-link text-decoration-none">Class:</a>
+                        <span class="project-subtitle fs-6 fw-normal ms-1">Computing in Python (CS001)</span>
+                    </h3>
+
+                    <p class="small project-description mb-3" style="line-height: 1.5;">
+                        During the fall quarter of my freshman year at Dartmouth, I took Computing in Python.
+                        This repo serves as a collection of HW, projects, lessons alongside material specific to the
+                        course like CS1Lib.
+                    </p>
+                </div>
+
+                <div class="mt-4 pt-3 project-card-footer">
+                    <a href="https://github.com/OceanRay1/CS1" target="_blank"
+                        class="btn btn-primary btn-sm w-100 fw-semibold">View Repo</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+        <!-- WORK EXPERIENCE SECTION CARD -->
+        <section id="work-experience" class="portfolio-card-section">
+            <h2 class="centered-section-title">Experience</h2>
+            <br>
+            <div class="timeline-container">
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="entry-text-pane">
+                            <div class="resume-style-header">
+                                <div class="header-left-block">
+                                    <h3 class="degree">
+                                        <a href="https://redfoldernews.org/about-us/" target="_blank"
+                                            class="title-link">The Red Folder, Equality in Forensics</a>
+                                    </h3>
+                                    <h4 class="institution">Founding Member</h4>
+                                </div>
+                                <div class="header-right-block">
+                                    <span class="location">Pompano Beach, FL (Remote)</span>
+                                    <span class="date">Feb 2024 – May 2026</span>
+                                </div>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Orchestrated digital content operations, scaling resource accessibility nationwide
+                                    since founding to over 400+ active monthly readers and 1,500+ Instagram followers,
+                                    by overseeing and scripting Red Folder Media digital content.</li>
+                                <li>Co-created $580K worth of free resources that impact 29k nationwide by researching,
+                                    writing, and publishing 30+ articles and 20+ briefs analyzing domestic and
+                                    international economic, political, and policy developments.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="entry-text-pane">
+                            <div class="resume-style-header">
+                                <div class="header-left-block">
+                                    <h3 class="degree">
+                                        <a href="https://www.rove.com/" target="_blank" class="title-link">Rove Miles
+                                            (YC W24)</a>
+                                    </h3>
+                                    <h4 class="institution">Strategy & Product Intern</h4>
+                                </div>
+                                <div class="header-right-block">
+                                    <span class="location">New York, NY (Remote)</span>
+                                    <span class="date">Jun 2024 – Aug 2024</span>
+                                </div>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Engineered data-driven market models on Gen Z financial behavior using public
+                                    datasets, synthesizing insights to pitch and evaluate 20+ strategic airline
+                                    partnership opportunities to expand Rove’s network.</li>
+                                <li>Advised and optimized a high-yield rewards architecture (featuring 25x hotel and 10x
+                                    flight point structures) via competitive data analysis, with recommendation logic
+                                    presented to executive leadership.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="entry-text-pane">
+                            <div class="resume-style-header">
+                                <div class="header-left-block">
+                                    <h3 class="degree">
+                                        <a href="https://emerginginvestigators.org/articles/24-017" target="_blank"
+                                            class="title-link">“US Remote Work: Analysis of Salary Trends”</a>
+                                    </h3>
+                                    <h4 class="institution">First Author & Labor Economics Researcher</h4>
+                                </div>
+                                <div class="header-right-block">
+                                    <span class="location">Plano, Texas</span>
+                                    <span class="date">Aug 2023 – Sep 2024</span>
+                                </div>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Performed statistical modeling and regression analysis across 10+ industries to
+                                    quantify relationships between remote-work adoption and post-COVID wage growth using
+                                    WFH and BLS Salary Report data.</li>
+                                <li>Published first-author research examining labor-market implications of the positive
+                                    correlation between remote work and salary growth in the <em>Journal of Emerging
+                                        Investigators</em> under mentorship from an MIT PhD researcher.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- EDUCATION SECTION CARD -->
+        <section id="education" class="portfolio-card-section">
+            <h2 class="centered-section-title">Education</h2> <br>
+
+            <div class="timeline-container">
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="entry-text-pane">
+                            <div class="resume-style-header">
+                                <div class="header-left-block">
+                                    <h3 class="degree">Dartmouth College</h3>
+                                    <h4 class="institution">B.A. in Economics & Computer Science</h4>
+                                </div>
+                                <div class="header-right-block">
+                                    <span class="location">Hanover, New Hampshire</span>
+                                    <span class="date">2026 – 2030</span>
+                                </div>
+                            </div>
+                            <p class="details">
+                                <strong>Honors:</strong> Coolidge Senator (Top 2% / &lt;100 nationwide) – Scholarship &
+                                Summit Recipient <br>
+                                <strong>Relevant Coursework:</strong> Accelerated Multivariable Calculus, Computing in
+                                Python, Statistics, Microeconomic Analysis, Single-variable Calculus
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="entry-text-pane">
+                            <div class="resume-style-header">
+                                <div class="header-left-block">
+                                    <h3 class="degree">Plano West Senior High School</h3>
+                                    <h4 class="institution">High School Diploma</h4>
+                                </div>
+                                <div class="header-right-block">
+                                    <span class="location">Plano, Texas</span>
+                                    <span class="date">2022 – 2026</span>
+                                </div>
+                            </div>
+                            <p class="details">
+                                <strong>Academics:</strong> SAT: 1560 (790M / 770V) | Summa Cum Laude | Rank: Top ~3% /
+                                1200<br>
+                                <strong>AP Coursework (5s):</strong> Calculus BC, Physics C Mechanics, Statistics,
+                                Macroeconomics, Microeconomics, English Literature, English Language, Biology, US
+                                History, Human Geography, & Environmental Science
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- HONORS & AWARDS SECTION CARD -->
+        <section class="portfolio-card-section">
+            <h2 class="centered-section-title">Honors & Awards</h2> <br>
+
+            <div class="centered-awards-container">
+                <!-- Entry 1: Text Left, Video Right -->
+                <article class="award-centered-item">
+                    <div class="entry-text-pane">
+                        <h3 class="award-title">Top 3 Nationally | NSDA National Speech and Debate Tournament</h3>
+                        <p class="award-details">
+                            3rd Place Overall & in the Final Round of Domestic Extemporaneous Speaking at NSDA
+                            Nationals, the world's largest academic competition
+                        </p>
+                    </div>
+                    <div class="entry-media-pane">
+                        <div class="video-aspect-wrapper">
+                            <iframe src="https://www.youtube.com/embed/2sYGW_L1vq0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entry 2: Media Left, Text Right (Alternated by CSS) -->
+                <article class="award-centered-item">
+                    <div class="entry-text-pane">
+                        <h3 class="award-title">5x National & State Champion/Runner-Up | Extemporaneous Speaking</h3>
+                        <ul class="award-bullets-centered">
+                            <li>National Champion | Longhorn Classic, UT Austin (1st of 100+ nationwide)</li>
+                            <li>National Runner-Up | Harvard National Speech & Debate Tournament (2nd of ~300
+                                nationwide)</li>
+                            <li>National Runner-Up | Barkley Forum, Emory University (2nd of ~100 nationwide)</li>
+                            <li>State Champion | TFA Texas State Tournament (1st of ~100 state qualifiers)</li>
+                            <li>State Runner-Up | Capital City Invite–Only Round Robin (2nd of 16 invited speakers
+                                statewide)</li>
+                        </ul>
+                    </div>
+                    <div class="entry-media-pane">
+                        <img src="assets.png/Debate.jpg" alt="Extemporaneous Speaking Award" class="award-image" />
+                    </div>
+                </article>
+
+                <!-- Entry 3: Text Left, Media Right -->
+                <article class="award-centered-item">
+                    <div class="entry-text-pane">
+                        <h3 class="award-title">Coolidge Senator | Calvin Coolidge Presedential Foundiation</h3>
+                        <p class="award-details">
+                            Recognized as one of the top 100 applicants out of a national pool of nearly 5,000
+                            candidates (~top 2%) for demonstrating exceptional academic accomplishments, a nuanced
+                            understanding of public policy, and a commitment to public service. Received a one-time
+                            college scholarship and an All-Expenses trip to the annual Coolidge Senators Summit.
+                        </p>
+                    </div>
+                    <div class="entry-media-pane">
+                        <img src="assets.png/Coolidge.jpg" alt="Coolidge Senator" class="award-image" />
+                    </div>
+                </article>
+
+                <!-- Entry 4: Media Left, Text Right (Alternated by CSS) -->
+                <article class="award-centered-item">
+                    <div class="entry-text-pane">
+                        <h3 class="award-title">Top 3 in State | Texas FTC Robotics State Tournament Championship</h3>
+                        <p class="award-details">
+                            Team #22123 Engineering Notebook & Outreach Lead - 3rd of 250+ teams region-wide at UIL 6A
+                            State Championship
+                        </p>
+                    </div>
+                    <div class="entry-media-pane">
+                        <img src="assets.png/Robotics.jpg" alt="Robotics Award" class="award-image" />
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS Libraries & Initialization -->
+    <script src="script.js"></script>
+</body>
+
+</html>
