@@ -5,410 +5,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roshan's Realm</title>
-
-    <!-- Bootstrap CSS & JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
-    <!-- GitHub Calendar CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #FAF9F5;
-        }
-
-        /* Custom Dark Styling for the Live Calendar Widget */
-        .calendar {
-            border: none !important;
-            background: transparent !important;
-            color: #c9d1d9 !important;
-            font-family: inherit;
-            width: 100% !important;
-        }
-
-        .calendar .contrib-column,
-        .calendar .contrib-footer {
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-github" viewBox="0 0 16 16">
+            <path fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M3 9h4v12H3zM5 3.2a2.3 2.3 0 110 4.6 2.3 2.3 0 010-4.6zM10 9h3.8v1.7C14.5 9.5 15.8 8.7 17.6 8.7c3.5 0 4.4 2.3 4.4 5.3V21h-4v-6.2c0-1.5-.1-2.8-1.8-2.8s-2.1 1.3-2.1 2.7V21h-4z" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                <path d="M3.5 7.5l8.5 6 8.5-6" />
+            </g>
+        </symbol>
+        <symbol id="i-contrast" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+            <path fill="currentColor" d="M12 3a9 9 0 010 18z" />
+        </symbol>
+    </svg>
+    <button id="theme-toggle" type="button" aria-label="Toggle light/dark mode" title="Toggle light/dark mode"><svg
+            width="20" height="20">
+            <use href="#i-contrast" />
+        </svg></button>
     <main>
-        <div class="d-flex justify-content-end p-3">
-            <button id="theme-toggle" class="btn btn-outline-secondary btn-sm">🌙 Dark Mode</button>
-        </div>
-        <section>
-            <div class="px-4 py-5 mt-4 text-center">
-                <img class="d-block mx-auto mb-4 circle-photo" src="assets.png/SoloPhoto.png" alt="" width="770"
-                    height="570">
-                <h1 class="display-5 fw-bold">Hi! Welcome to...</h1>
-                <div class="container" style="max-width: 768px;">
-
-                    <!-- Header Info -->
-                    <div class="text-center mb-4">
-                        <h1 class="display-3 fw-bold realm-green lh-1 mb-3">Roshan's Realm</h1>
-                        <p class="lead mb-0">
-                            I'm a Dartmouth student interested in CS, Economics, & Math
-                        </p>
-                    </div>
-                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
-                        <button type="button" onclick="window.location.href='https://github.com/OceanRay1';"
-                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">Github</button>
-                        <button type="button"
-                            onclick="window.location.href='https://www.linkedin.com/in/roshan-shivnani-730a9a2b0/';"
-                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">LinkedIn</button>
-                        <button type="button"
-                            onclick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=roshan.shivnani@gmail.com';"
-                            class="btn btn-outline-secondary btn-lg px-4 flex-fill">Contact</button>
-                    </div>
-                </div>
+        <h2 class="section-title">/roshan_realm/README.md</h2>
+        <header class="hero">
+            <img class="circle-photo" src="assets.png/SoloPhoto.png" alt="" width="280" height="280">
+            <div class="hero-text">
+                <p class="greeting">Hi! Welcome to...</p>
+                <h1>Roshan's Realm</h1>
+                <p class="lead">I'm a Dartmouth student interested in the intersection of CS & economics, from product
+                    management to quantitative finance</p>
+                <nav class="links">
+                    <a href="https://github.com/OceanRay1" target="_blank" aria-label="GitHub" title="GitHub"><svg
+                            width="20" height="20" aria-hidden="true">
+                            <use href="#i-github" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/in/roshan-shivnani-730a9a2b0/" target="_blank"
+                        aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" aria-hidden="true">
+                            <use href="#i-linkedin" />
+                        </svg></a>
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=roshan.shivnani@gmail.com"
+                        target="_blank" aria-label="Email" title="Email"><svg width="20" height="20" aria-hidden="true">
+                            <use href="#i-mail" />
+                        </svg></a>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <section id="open-source" class="container pt-2 pb-5" style="max-width: 1140px;">
-    <!-- 50/50 Equal Two-Column Grid -->
-    <div class="row g-4 align-items-stretch">
+        <nav class="jump" aria-label="Jump to section">
+            <a href="#open-source">Projects</a>
+            <a href="#work-experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#awards">Awards</a>
+        </nav>
 
-        <!-- LEFT SIDE: GitHub Activity / Summary -->
-        <div class="col-lg-6">
-            <div class="p-4 rounded-4 shadow-sm border custom-card project-card h-100 d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="badge bg-success text-white px-2 py-1"
-                            style="font-size: 0.75rem; font-weight: 500;">Latest Project</span>
-                        <!-- Updated Tech Stack Badges to match button style -->
-                        <div class="d-flex gap-1">
-                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Python</span>
-                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">TypeScript</span>
-                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Scikit-Learn</span>
-                        </div>
+        <section id="open-source">
+            <h2 class="section-title">/roshan_realm/projects</h2>
+            <div class="grid-2">
+                <article class="project card">
+                    <div class="project-meta">
+                        <span class="tag">Latest Full-Stack</span>
+                        <div class="tech"><span>Python</span><span>TypeScript</span><span>Scikit-Learn</span></div>
                     </div>
-
-                    <!-- IMAGE PREVIEW CONTAINER -->
-                    <div class="project-img-container rounded-3 mb-3 border overflow-hidden shadow-sm"
-                        style="height: 140px;">
-                        <img src="assets.png/YieldGuard.jpg" alt="YieldGuard Project Preview"
-                            style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                    <div class="project-img"><img src="assets.png/YieldGuard.jpg" alt="YieldGuard Project Preview">
                     </div>
-
-                    <!-- TEXT SECTION -->
-                    <h3 class="fs-5 fw-bold mb-3 d-inline-block">
-                        <a href="https://yieldshield.pages.dev/" target="_blank" class="title-link text-decoration-none">YieldGuard:</a>
-                        <span class="project-subtitle fs-6 fw-normal ms-1">Macroeconomic False Alarm Filter</span>
+                    <h3><a href="https://yieldshield.pages.dev/" target="_blank">YieldGuard:</a>
+                        <span class="sub">Macroeconomic False Alarm Filter</span>
                     </h3>
-
-                    <p class="small project-description mb-3" style="line-height: 1.5;">
-                        ML-powered macroeconomic terminal trained on 50+ years of FRED data to filter
-                        false-positive yield curve inversion signals, achieving a <strong class="project-highlight">93% reduction in false positives</strong> over the baseline 10Y-3M model.
-                    </p>
-                </div>
-
-                <div class="project-card-footer">
-                    <a href="https://github.com/OceanRay1/Yield-Guard" target="_blank"
-                        class="btn btn-primary btn-sm w-100 fw-semibold">View Repo</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE: Featured Project -->
-        <div class="col-lg-6">
-            <div class="p-4 rounded-4 shadow-sm border custom-card project-card h-100 d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="badge bg-success text-white px-2 py-1"
-                            style="font-size: 0.75rem; font-weight: 500;">Latest Coursework</span>
-                        <!-- Updated Tech Stack Badges to match button style -->
-                        <div class="d-flex gap-1">
-                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">Python</span>
-                            <span class="badge tech-badge px-2 py-1" style="font-size: 0.75rem; font-weight: 500;">CS1Lib</span>
-                        </div>
-                    </div>
-
-                    <!-- IMAGE PREVIEW CONTAINER -->
-                    <div class="project-img-container rounded-3 mb-3 border overflow-hidden shadow-sm"
-                        style="height: 140px;">
-                        <img src="assets.png/Dartmouth.jpg" alt="Dartmouth Course Preview"
-                            style="width: 100%; height: 100%; object-fit: contain; display: block;">
-                    </div>
-
-                    <!-- TEXT SECTION -->
-                    <h3 class="fs-5 fw-bold mb-3">
-                        <span>Class:</span>
-                        <span class="project-subtitle fs-6 fw-normal ms-1">Computing in Python (CS001)</span>
-                    </h3>
-
-                    <p class="small project-description mb-3" style="line-height: 1.5;">
-                        During the fall quarter of my freshman year at Dartmouth, I took Computing in Python.
-                        This repo serves as a collection of HW, projects, and labs alongside material specific to the
-                        course like CS1Lib.
-                    </p>
-                </div>
-
-                <div class="project-card-footer">
-                    <a href="https://github.com/OceanRay1/CS1" target="_blank"
-                        class="btn btn-primary btn-sm w-100 fw-semibold">View Repo</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-        <!-- WORK EXPERIENCE SECTION CARD -->
-        <section id="work-experience" class="portfolio-card-section">
-            <h2 class="centered-section-title">Experience</h2>
-            <div class="timeline-container">
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">
-                                        <a href="https://redfoldernews.org/about-us/" target="_blank"
-                                            class="title-link">The Red Folder, Equality in Forensics</a>
-                                    </h3>
-                                    <h4 class="institution">Founding Member</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">Pompano Beach, FL (Remote)</span>
-                                    <span class="date">Feb 2024 – May 2026</span>
-                                </div>
-                            </div>
-                            <ul class="timeline-bullets">
-                                <li>Orchestrated digital content operations, scaling resource accessibility nationwide
-                                    since founding to over 400+ active monthly readers and 1,500+ Instagram followers,
-                                    by overseeing and scripting Red Folder Media digital content.</li>
-                                <li>Co-created $580K worth of free resources that impact 29k nationwide by researching,
-                                    writing, and publishing 30+ articles and 20+ briefs analyzing domestic and
-                                    international economic, political, and policy developments.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <p>ML-powered macroeconomic terminal trained on 50+ years of FRED data to filter
+                        false-positive yield curve inversion signals, achieving a <strong>93% reduction in false
+                            positives</strong> over the baseline 10Y-3M model.</p>
+                    <a class="repo" href="https://github.com/OceanRay1/Yield-Guard" target="_blank"><svg width="16"
+                            height="16" aria-hidden="true">
+                            <use href="#i-github" />
+                        </svg> View Repo</a>
                 </article>
 
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">
-                                        <a href="https://www.rove.com/" target="_blank" class="title-link">Rove Miles
-                                            (YC W24)</a>
-                                    </h3>
-                                    <h4 class="institution">Strategy & Product Intern</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">New York, NY (Remote)</span>
-                                    <span class="date">Jun 2024 – Aug 2024</span>
-                                </div>
-                            </div>
-                            <ul class="timeline-bullets">
-                                <li>Engineered data-driven market models on Gen Z financial behavior using public
-                                    datasets, synthesizing insights to pitch and evaluate 20+ strategic airline
-                                    partnership opportunities to expand Rove’s network.</li>
-                                <li>Advised and optimized a high-yield rewards architecture (featuring 25x hotel and 10x
-                                    flight point structures) via competitive data analysis, with recommendation logic
-                                    presented to executive leadership.</li>
-                            </ul>
-                        </div>
+                <article class="project card">
+                    <div class="project-meta">
+                        <span class="tag">Latest Personal Project</span>
+                        <div class="tech"><span>Python</span><span>Numba</span><span>Pytest</span></div>
                     </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">
-                                        <a href="https://emerginginvestigators.org/articles/24-017" target="_blank"
-                                            class="title-link">“US Remote Work: Analysis of Salary Trends”</a>
-                                    </h3>
-                                    <h4 class="institution">First Author & Labor Economics Researcher</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">Plano, Texas</span>
-                                    <span class="date">Aug 2023 – Sep 2024</span>
-                                </div>
-                            </div>
-                            <ul class="timeline-bullets">
-                                <li>Performed statistical modeling and regression analysis across 10+ industries to
-                                    quantify relationships between remote-work adoption and post-COVID wage growth using
-                                    WFH and BLS Salary Report data.</li>
-                                <li>Published first-author research examining labor-market implications of the positive
-                                    correlation between remote work and salary growth in the <em>Journal of Emerging
-                                        Investigators</em> under mentorship from an MIT PhD researcher.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">
-                                        <a href="https://keithself.house.gov/services/youth-advisory-council" target="_blank" class="title-link">Congressional Youth Advisory Council</a>
-                                    </h3>
-                                    <h4 class="institution">Economic Affairs Subcommittee Student Advisor</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">U.S. House District 3</span>
-                                    <span class="date">Aug 2023 – May 2024</span>
-                                </div>
-                            </div>
-                            <ul class="timeline-bullets">
-                                <li>Tracked and analyzed economic legislation like H.R. 7400 and its proposed 10% tax credit, 
-                                    evaluating inflationary implications and formulating policy recommendations presented to 
-                                    Congressman Keith Self & Plano ISD Trustee Board</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- EDUCATION SECTION CARD -->
-        <section id="education" class="portfolio-card-section">
-            <h2 class="centered-section-title">Education</h2>
-            <div class="timeline-container">
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">Dartmouth College</h3>
-                                    <h4 class="institution">B.A. in Economics & Computer Science</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">Hanover, New Hampshire</span>
-                                    <span class="date">2026 – 2030</span>
-                                </div>
-                            </div>
-                            <p class="details">
-                                <strong>Honors:</strong> Coolidge Senator (Top 2% / &lt;100 nationwide) – Scholarship &
-                                Summit Recipient <br>
-                                <strong>Relevant Coursework:</strong> Accelerated Multivariable Calculus, Computing in
-                                Python, Statistics, Microeconomic Analysis, Single-variable Calculus
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="entry-text-pane">
-                            <div class="resume-style-header">
-                                <div class="header-left-block">
-                                    <h3 class="degree">Plano West Senior High School</h3>
-                                    <h4 class="institution">High School Diploma</h4>
-                                </div>
-                                <div class="header-right-block">
-                                    <span class="location">Plano, Texas</span>
-                                    <span class="date">2022 – 2026</span>
-                                </div>
-                            </div>
-                            <p class="details">
-                                <strong>Academics:</strong> SAT: 1560 (790M / 770V) | Summa Cum Laude | Rank: Top ~3% /
-                                1200<br>
-                                <strong>AP Coursework (5s):</strong> Calculus BC, Physics C Mechanics, Statistics,
-                                Macroeconomics, Microeconomics, English Literature, English Language, Biology, US
-                                History, Human Geography, & Environmental Science
-                            </p>
-                        </div>
-                    </div>
+                    <div class="project-img"><img src="assets.png/Options.png" alt="Dartmouth Course Preview"></div>
+                    <h3> American Options Engine </h3>
+                    <p>Options pricing & volatility surface engine using Numba JIT-accelerated
+                        CRR binomial trees to achieve<strong> ~300x speedups over pure Python</strong>, integrated with
+                        Gatheral SVI surface calibration and static arbitrage checks.</p>
+                    <a class="repo" href="https://github.com/OceanRay1/CS1" target="_blank"><svg width="16" height="16"
+                            aria-hidden="true">
+                            <use href="#i-github" />
+                        </svg> View Repo</a>
                 </article>
             </div>
         </section>
 
-        <!-- HONORS & AWARDS SECTION CARD -->
-        <section class="portfolio-card-section">
-            <h2 class="centered-section-title">Honors & Awards</h2>
-            <div class="centered-awards-container">
-                <!-- Entry 1: Text Left, Video Right -->
-                <article class="award-centered-item">
-                    <div class="entry-text-pane">
-                        <h3 class="award-title">Top 3 Nationally | NSDA National Speech and Debate Tournament</h3>
-                        <p class="award-details">
-                            3rd Place Overall & in the Final Round of Domestic Extemporaneous Speaking at NSDA
-                            Nationals, the world's largest academic competition
-                        </p>
+        <section id="work-experience">
+            <h2 class="section-title">/roshan_realm/experience</h2>
+            <div class="stack">
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3><a href="https://redfoldernews.org/about-us/" target="_blank">The Red Folder, Equality
+                                    in Forensics</a></h3>
+                            <h4>Founding Member</h4>
+                        </div>
+                        <div class="entry-side"><span>Pompano Beach, FL (Remote)</span><span class="date">Feb 2024 – May
+                                2026</span></div>
                     </div>
-                    <div class="entry-media-pane">
-                        <div class="video-aspect-wrapper">
-                            <iframe src="https://www.youtube.com/embed/2sYGW_L1vq0" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                    <ul>
+                        <li>Orchestrated digital content operations, scaling resource accessibility nationwide
+                            since founding to over 400+ active monthly readers and 1,500+ Instagram followers,
+                            by overseeing and scripting Red Folder Media digital content.</li>
+                        <li>Co-created $580K worth of free resources that impact 29k nationwide by researching,
+                            writing, and publishing 30+ articles and 20+ briefs analyzing domestic and
+                            international economic, political, and policy developments.</li>
+                    </ul>
+                </article>
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3><a href="https://www.rove.com/" target="_blank">Rove Miles (YC W24)</a></h3>
+                            <h4>Strategy &amp; Product Intern</h4>
+                        </div>
+                        <div class="entry-side"><span>New York, NY (Remote)</span><span class="date">Jun 2024 – Aug
+                                2024</span></div>
+                    </div>
+                    <ul>
+                        <li>Engineered data-driven market models on Gen Z financial behavior using public
+                            datasets, synthesizing insights to pitch and evaluate 20+ strategic airline
+                            partnership opportunities to expand Rove’s network.</li>
+                        <li>Advised and optimized a high-yield rewards architecture (featuring 25x hotel and 10x
+                            flight point structures) via competitive data analysis, with recommendation logic
+                            presented to executive leadership.</li>
+                    </ul>
+                </article>
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3><a href="https://emerginginvestigators.org/articles/24-017" target="_blank">“US Remote
+                                    Work: Analysis of Salary Trends”</a></h3>
+                            <h4>First Author &amp; Labor Economics Researcher</h4>
+                        </div>
+                        <div class="entry-side"><span>Plano, Texas</span><span class="date">Aug 2023 – Sep 2024</span>
                         </div>
                     </div>
+                    <ul>
+                        <li>Performed statistical modeling and regression analysis across 10+ industries to
+                            quantify relationships between remote-work adoption and post-COVID wage growth using
+                            WFH and BLS Salary Report data.</li>
+                        <li>Published first-author research examining labor-market implications of the positive
+                            correlation between remote work and salary growth in the <em>Journal of Emerging
+                                Investigators</em> under mentorship from an MIT PhD researcher.</li>
+                    </ul>
+                </article>
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3><a href="https://keithself.house.gov/services/youth-advisory-council"
+                                    target="_blank">Congressional Youth Advisory Council</a></h3>
+                            <h4>Economic Affairs Subcommittee Student Advisor</h4>
+                        </div>
+                        <div class="entry-side"><span>U.S. House District 3</span><span class="date">Aug 2023 – May
+                                2024</span></div>
+                    </div>
+                    <ul>
+                        <li>Tracked and analyzed economic legislation like H.R. 7400 and its proposed 10% tax credit,
+                            evaluating inflationary implications and formulating policy recommendations presented to
+                            Congressman Keith Self &amp; Plano ISD Trustee Board</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">/roshan_realm/education</h2>
+            <div class="stack">
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3>Dartmouth College</h3>
+                            <h4>B.A. in Economics &amp; Computer Science</h4>
+                        </div>
+                        <div class="entry-side"><span>Hanover, New Hampshire</span><span class="date">2026 – 2030</span>
+                        </div>
+                    </div>
+                    <p class="details">
+                        <strong>Honors:</strong> Coolidge Senator (Top 2% / &lt;100 nationwide) – Scholarship &amp;
+                        Summit Recipient <br>
+                        <strong>Relevant Coursework:</strong> Accelerated Multivariable Calculus, Computing in
+                        Python, Statistics, Microeconomic Analysis, Single-variable Calculus
+                    </p>
+                </article>
+                <article class="entry card">
+                    <div class="entry-head">
+                        <div>
+                            <h3>Plano West Senior High School</h3>
+                            <h4>High School Diploma</h4>
+                        </div>
+                        <div class="entry-side"><span>Plano, Texas</span><span class="date">2022 – 2026</span></div>
+                    </div>
+                    <p class="details">
+                        <strong>Academics:</strong> SAT: 1560 (790M / 770V) | Summa Cum Laude | Rank: Top ~3% /
+                        1200<br>
+                        <strong>AP Coursework (5s):</strong> Calc BC, Physics C Mechanics, Statistics,
+                        Macro/Microeconomics, English Literature/Language, Biology, US
+                        History, Human Geography, & Envir. Science
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2 class="section-title">/roshan_realm/awards</h2>
+            <div class="grid-2">
+
+                <article class="award card">
+                    <h3>Top 3 Nationally | NSDA National Speech and Debate Tournament</h3>
+                    <p>3rd Place Overall &amp; in the Final Round of Domestic Extemporaneous Speaking at NSDA
+                        Nationals, the world's largest academic competition. My final round speech was delivered at the
+                        Altria Theater in Richmond, Virginia, on the same stage where Oprah Winfrey, Barack Obama, Bob
+                        Iger and more have spoken.</p>
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube-nocookie.com/embed/2sYGW_L1vq0" title="YouTube video player"
+                            frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+                <article class="award card">
+                    <h3>5x National &amp; State Champion/Runner-Up | Extemporaneous Speaking</h3>
+                    <ul>
+                        <li>1st of 100+ | UT Austin, Longhorn Classic</li>
+                        <li>2nd of 300+ | Harvard National Debate Tournament</li>
+                        <li>2nd of 100+ | Emory, Barkley Forum</li>
+                        <li>1st of 100+ | TFA Texas State Tournament</li>
+                        <li>2nd of 16 | Capital City Invite–Only Round Robin</li>
+                    </ul>
+                    <img src="assets.png/Debate.jpg" alt="Extemporaneous Speaking Award">
                 </article>
 
-                <!-- Entry 2: Media Left, Text Right (Alternated by CSS) -->
-                <article class="award-centered-item">
-                    <div class="entry-text-pane">
-                        <h3 class="award-title">5x National & State Champion/Runner-Up | Extemporaneous Speaking</h3>
-                        <ul class="award-bullets-centered">
-                            <li>National Champion | Longhorn Classic, UT Austin (1st of 100+ nationwide)</li>
-                            <li>National Runner-Up | Harvard National Speech & Debate Tournament (2nd of ~300
-                                nationwide)</li>
-                            <li>National Runner-Up | Barkley Forum, Emory University (2nd of ~100 nationwide)</li>
-                            <li>State Champion | TFA Texas State Tournament (1st of ~100 state qualifiers)</li>
-                            <li>State Runner-Up | Capital City Invite–Only Round Robin (2nd of 16 invited speakers
-                                statewide)</li>
-                        </ul>
-                    </div>
-                    <div class="entry-media-pane">
-                        <img src="assets.png/Debate.jpg" alt="Extemporaneous Speaking Award" class="award-image" />
-                    </div>
+                <article class="award card">
+                    <h3>Coolidge Senator | Calvin Coolidge Presidential Foundation</h3>
+                    <p>Recognized as one of the top 100 applicants out of a national pool of nearly 5,000
+                        candidates (~top 2%) receiving a one-time college scholarship and an All-Expenses trip to the
+                        annual Coolidge Senators Summit</p>
+                    <img src="assets.png/Coolidge.jpg" alt="Coolidge Senator">
                 </article>
 
-                <!-- Entry 3: Text Left, Media Right -->
-                <article class="award-centered-item">
-                    <div class="entry-text-pane">
-                        <h3 class="award-title">Coolidge Senator | Calvin Coolidge Presedential Foundiation</h3>
-                        <p class="award-details">
-                            Recognized as one of the top 100 applicants out of a national pool of nearly 5,000
-                            candidates (~top 2%) for demonstrating exceptional academic accomplishments, a nuanced
-                            understanding of public policy, and a commitment to public service. Received a one-time
-                            college scholarship and an All-Expenses trip to the annual Coolidge Senators Summit.
-                        </p>
-                    </div>
-                    <div class="entry-media-pane">
-                        <img src="assets.png/Coolidge.jpg" alt="Coolidge Senator" class="award-image" />
-                    </div>
-                </article>
-
-                <!-- Entry 4: Media Left, Text Right (Alternated by CSS) -->
-                <article class="award-centered-item">
-                    <div class="entry-text-pane">
-                        <h3 class="award-title">Top 3 Statewide | Texas FTC Robotics State Tournament Championship</h3>
-                        <p class="award-details">
-                            Served as Engineering Notebook & Outreach Lead on Team #22123 leading team to place 3rd of 250+ teams region-wide at UIL 6A
-                            State Championship
-                        </p>
-                    </div>
-                    <div class="entry-media-pane">
-                        <img src="assets.png/Robotics.png" alt="Robotics Award" class="award-image" />
-                    </div>
+                <article class="award card">
+                    <h3>Top 3 Statewide | Texas FTC Robotics State Tournament Championship</h3>
+                    <p>Served as Engineering Notebook &amp; Outreach Lead on Team #22123 leading team to place 3rd of
+                        250+ teams region-wide at UIL 6A
+                        State Championship</p>
+                    <img src="assets.png/Robotics.png" alt="Robotics Award">
                 </article>
             </div>
         </section>
     </main>
 
-    <!-- JS Libraries & Initialization -->
     <script src="script.js"></script>
 </body>
 
