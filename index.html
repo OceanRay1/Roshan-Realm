@@ -38,197 +38,343 @@
             width="20" height="20">
             <use href="#i-contrast" />
         </svg></button>
+
     <main>
-        <h2 class="section-title">/roshan_realm/README.md</h2>
+        <h2 class="section-title" data-type="/roshan_realm/README.md">
+            <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">_</span>
+        </h2>
         <header class="hero">
-            <img class="circle-photo" src="assets.png/SoloPhoto.png" alt="" width="280" height="280">
             <div class="hero-text">
                 <p class="greeting">Hi! Welcome to...</p>
                 <h1>Roshan's Realm</h1>
-                <p class="lead">I'm a Dartmouth student interested in the intersection of CS & economics, from product
-                    management to quantitative finance</p>
-                <nav class="links">
-                    <a href="https://github.com/OceanRay1" target="_blank" aria-label="GitHub" title="GitHub"><svg
-                            width="20" height="20" aria-hidden="true">
+                <p class="lead">
+                    I'm a Dartmouth student studying at the intersection of CS, Math, and Economics.
+                    Current interests include quant finance, ML, full-stack, and economic policy.
+                </p>
+                <p class="lead-intro">Over the past few years I've:</p>
+                <ul class="lead-list">
+                    <li>Optimized rewards architecture for a YC-backed startup
+                    </li>
+                    <li>Analyzed economic policy for the US House of Representatives
+                    </li>
+                    <li>Erased $1M+ in medical debt working with Undue Medical Debt</li>
+                </ul>
+            </div>
+
+            <div class="hero-media">
+                <img class="circle-photo" src="assets.png/SoloPhoto.png" alt="Portrait of Roshan Shivnani" width="350"
+                    height="350">
+                <nav class="links" aria-label="Social links">
+                    <a href="https://github.com/OceanRay1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                        title="GitHub">
+                        <svg width="20" height="20" aria-hidden="true">
                             <use href="#i-github" />
-                        </svg></a>
-                    <a href="https://www.linkedin.com/in/roshiv/" target="_blank"
-                        aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" aria-hidden="true">
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/roshiv/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn" title="LinkedIn">
+                        <svg width="20" height="20" aria-hidden="true">
                             <use href="#i-linkedin" />
-                        </svg></a>
+                        </svg>
+                    </a>
                     <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=roshan.shivnani@gmail.com"
-                        target="_blank" aria-label="Email" title="Email"><svg width="20" height="20" aria-hidden="true">
+                        target="_blank" rel="noopener noreferrer" aria-label="Email" title="Email">
+                        <svg width="20" height="20" aria-hidden="true">
                             <use href="#i-mail" />
-                        </svg></a>
+                        </svg>
+                    </a>
                 </nav>
             </div>
         </header>
 
         <nav class="jump" aria-label="Jump to section">
-            <a href="#open-source">Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#work-experience">Experience</a>
             <a href="#education">Education</a>
             <a href="#awards">Awards</a>
         </nav>
 
-        <section id="open-source">
-            <h2 class="section-title">/roshan_realm/projects</h2>
-            <div class="grid-2">
-                <article class="project card">
-                    <div class="project-meta">
-                        <span class="tag">Latest Full-Stack</span>
-                        <div class="tech"><span>Python</span><span>TypeScript</span><span>Scikit-Learn</span></div>
-                    </div>
-                    <div class="project-img"><img src="assets.png/YieldGuard.jpg" alt="YieldGuard Project Preview">
-                    </div>
-                    <h3><a href="https://yieldshield.pages.dev/" target="_blank">YieldGuard:</a>
-                        <span class="sub">Macroeconomic False Alarm Filter</span>
-                    </h3>
-                    <p>ML-powered macroeconomic terminal trained on 50+ years of FRED data to filter
-                        false-positive yield curve inversion signals, achieving a <strong>93% reduction in false
-                            positives</strong> over the baseline 10Y-3M model.</p>
-                    <a class="repo" href="https://github.com/OceanRay1/Yield-Guard" target="_blank"><svg width="16"
-                            height="16" aria-hidden="true">
-                            <use href="#i-github" />
-                        </svg> View Repo</a>
-                </article>
+        <section id="projects" class="projects-carousel-section" aria-label="Projects showcase">
+            <div class="projects-header">
+                <h2 class="section-title" data-type="/roshan_realm/projects">
+                    <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">_</span>
+                </h2>
 
-                <article class="project card">
-                    <div class="project-meta">
-                        <span class="tag">Latest Personal Project</span>
-                        <div class="tech"><span>Python</span><span>Numba</span><span>Pytest</span></div>
-                    </div>
-                    <div class="project-img"><img src="assets.png/Options.png" alt="Dartmouth Course Preview"></div>
-                    <h3> American Options Engine </h3>
-                    <p>Options pricing & volatility surface engine using Numba JIT-accelerated
-                        CRR binomial trees to achieve<strong> ~300x speedups over pure Python</strong>, integrated with
-                        Gatheral SVI surface calibration and static arbitrage checks.</p>
-                    <a class="repo" href="https://github.com/OceanRay1/Volatility-Surface-Engine" target="_blank"><svg width="16" height="16"
-                            aria-hidden="true">
-                            <use href="#i-github" />
-                        </svg> View Repo</a>
-                </article>
+                <div class="carousel-controls" role="group" aria-label="Project navigation">
+                    <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous project">
+                        &#8592;
+                    </button>
+                    <div class="carousel-dots" role="tablist" aria-label="Choose project"></div>
+                    <button type="button" class="carousel-btn" data-dir="1" aria-label="Next project">
+                        &#8594;
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-viewport" tabindex="0" aria-roledescription="carousel">
+                <div class="carousel-track">
+                    <article class="project card carousel-slide">
+                        <div class="project-meta">
+                            <span class="tag">Machine Learning</span>
+                            <div class="tech">
+                                <span>Python</span>
+                                <span>TypeScript</span>
+                                <span>Scikit-Learn</span>
+                            </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="assets.png/YieldGuard.png"
+                                alt="YieldGuard macroeconomic terminal dashboard interface">
+                        </div>
+                        <h3>
+                            <a href="https://yieldshield.pages.dev/" target="_blank"
+                                rel="noopener noreferrer">YieldGuard</a>:
+                            <span class="sub">Macroeconomic False Alarm Filter</span>
+                        </h3>
+                        <p>ML-powered macroeconomic terminal trained on 50+ years of FRED data to filter false-positive
+                            yield curve inversion signals, achieving a <strong>93% reduction in false positives</strong>
+                            over the baseline 10Y-3M model.</p>
+                        <a class="repo" href="https://github.com/OceanRay1/Yield-Guard" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use href="#i-github" />
+                            </svg> View Repo
+                        </a>
+                    </article>
+
+                    <article class="project card carousel-slide">
+                        <div class="project-meta">
+                            <span class="tag">Quantitative Finance</span>
+                            <div class="tech">
+                                <span>Python</span>
+                                <span>Numba</span>
+                                <span>Pytest</span>
+                            </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="assets.png/Options.png"
+                                alt="American Options Engine volatility surface and binomial pricing preview">
+                        </div>
+                        <h3>
+                            American Options Engine:
+                            <span class="sub">CRR Binomial &amp; SVI Volatility Surface</span>
+                        </h3>
+                        <p>Options pricing &amp; volatility surface engine using Numba JIT-accelerated
+                            CRR binomial trees to achieve <strong>~300x speedups over pure Python</strong>, integrated
+                            with
+                            Gatheral SVI surface calibration and static arbitrage checks.</p>
+                        <a class="repo" href="https://github.com/OceanRay1/Volatility-Surface-Engine" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use href="#i-github" />
+                            </svg> View Repo
+                        </a>
+                    </article>
+
+                    <article class="project card carousel-slide">
+                        <div class="project-meta">
+                            <span class="tag">Full-Stack Application</span>
+                            <div class="tech">
+                                <span>sql.js</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="assets.png/Reunite.png" alt="Reunite preview">
+                        </div>
+                        <h3>
+                            Reunite:
+                            <span class="sub">connecting seperated families</span>
+                        </h3>
+                        <p>Reunite was built for the DALI Lab's Full-Stack Application Challenge (F26) as a <strong>
+                            consent-first web app </strong> that helps families separated by a hurricane evacuation reunite, with
+                            no phone or ID required</p>
+                        <a class="repo" href="https://github.com/OceanRay1/Reunite" target="_blank" rel="noopener noreferrer">
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use href="#i-github" />
+                            </svg> View Repo
+                        </a>
+                    </article>
+                </div>
             </div>
         </section>
 
         <section id="work-experience">
-            <h2 class="section-title">/roshan_realm/experience</h2>
+            <h2 class="section-title" data-type="/roshan_realm/experience">
+                <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">_</span>
+            </h2>
             <div class="stack">
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3><a href="https://redfoldernews.org/about-us/" target="_blank">The Red Folder, Equality
-                                    in Forensics</a></h3>
-                            <h4>Founding Member</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap">
+                            <img class="entry-logo" src="assets.png/logos/redfolder.jpg" alt="" aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>Pompano Beach, FL (Remote)</span><span class="date">Feb 2024 – May
-                                2026</span></div>
+                        <div class="entry-head">
+                            <div>
+                                <h3><a href="https://redfoldernews.org/about-us/" target="_blank"
+                                        rel="noopener noreferrer">The Red Folder, Equality in Forensics</a></h3>
+                                <h4>Founding Member</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">Feb 2024 – May 2026</span>
+                                <span>Pompano Beach, FL (Remote)</span>
+                            </div>
+                        </div>
                     </div>
                     <ul>
-                        <li>Orchestrated digital content operations, scaling resource accessibility nationwide
-                            since founding to over 400+ active monthly readers and 1,500+ Instagram followers,
-                            by overseeing and scripting Red Folder Media digital content.</li>
-                        <li>Co-created $580K worth of free resources that impact 29k nationwide by researching,
-                            writing, and publishing 30+ articles and 20+ briefs analyzing domestic and
-                            international economic, political, and policy developments.</li>
+                        <li>Orchestrated digital content operations, scaling resource accessibility nationwide since
+                            founding to over 400+ active monthly readers and 1,500+ Instagram followers, by overseeing
+                            and scripting Red Folder Media digital content.</li>
+                        <li>Co-created $580K worth of free resources that impact 29k nationwide by researching, writing,
+                            and publishing 30+ articles and 20+ briefs analyzing domestic and international economic,
+                            political, and policy developments.</li>
                     </ul>
                 </article>
+
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3><a href="https://www.rove.com/" target="_blank">Rove Miles (YC W24)</a></h3>
-                            <h4>Strategy &amp; Product Intern</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap">
+                            <img class="entry-logo" src="assets.png/logos/rove.jpg" alt="" aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>New York, NY (Remote)</span><span class="date">Jun 2024 – Aug
-                                2024</span></div>
+                        <div class="entry-head">
+                            <div>
+                                <h3><a href="https://www.rove.com/" target="_blank" rel="noopener noreferrer">Rove Miles
+                                        (YC W24)</a></h3>
+                                <h4>Strategy &amp; Product Intern</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">Jun 2024 – Aug 2024</span>
+                                <span>New York, NY (Remote)</span>
+                            </div>
+                        </div>
                     </div>
                     <ul>
-                        <li>Engineered data-driven market models on Gen Z financial behavior using public
-                            datasets, synthesizing insights to pitch and evaluate 20+ strategic airline
-                            partnership opportunities to expand Rove’s network.</li>
-                        <li>Advised and optimized a high-yield rewards architecture (featuring 25x hotel and 10x
-                            flight point structures) via competitive data analysis, with recommendation logic
-                            presented to executive leadership.</li>
+                        <li>Engineered data-driven market models on Gen Z financial behavior using public datasets,
+                            synthesizing insights to pitch and evaluate 20+ strategic airline partnership opportunities
+                            to expand Rove’s network.</li>
+                        <li>Advised and optimized a high-yield rewards architecture (featuring 25x hotel and 10x flight
+                            point structures) via competitive data analysis, with recommendation logic presented to
+                            executive leadership.</li>
                     </ul>
                 </article>
+
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3><a href="https://emerginginvestigators.org/articles/24-017" target="_blank">“US Remote
-                                    Work: Analysis of Salary Trends”</a></h3>
-                            <h4>First Author &amp; Labor Economics Researcher</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap">
+                            <img class="entry-logo" src="assets.png/logos/jei.png" alt="" aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>Plano, Texas</span><span class="date">Aug 2023 – Sep 2024</span>
+                        <div class="entry-head">
+                            <div>
+                                <h3><a href="https://emerginginvestigators.org/articles/24-017" target="_blank"
+                                        rel="noopener noreferrer">“US Remote Work: Analysis of Salary Trends”</a></h3>
+                                <h4>First Author &amp; Labor Economics Researcher</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">Aug 2023 – Sep 2024</span>
+                                <span>Plano, Texas</span>
+                            </div>
                         </div>
                     </div>
                     <ul>
-                        <li>Performed statistical modeling and regression analysis across 10+ industries to
-                            quantify relationships between remote-work adoption and post-COVID wage growth using
-                            WFH and BLS Salary Report data.</li>
+                        <li>Performed statistical modeling and regression analysis across 10+ industries to quantify
+                            relationships between remote-work adoption and post-COVID wage growth using WFH and BLS
+                            Salary Report data.</li>
                         <li>Published first-author research examining labor-market implications of the positive
                             correlation between remote work and salary growth in the <em>Journal of Emerging
                                 Investigators</em> under mentorship from an MIT PhD researcher.</li>
                     </ul>
                 </article>
+
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3><a href="https://keithself.house.gov/services/youth-advisory-council"
-                                    target="_blank">Congressional Youth Advisory Council</a></h3>
-                            <h4>Economic Affairs Subcommittee Student Advisor</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap">
+                            <img class="entry-logo" src="assets.png/logos/house.jpg" alt="" aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>U.S. House District 3</span><span class="date">Aug 2023 – May
-                                2024</span></div>
+                        <div class="entry-head">
+                            <div>
+                                <h3><a href="https://keithself.house.gov/services/youth-advisory-council"
+                                        target="_blank" rel="noopener noreferrer">Congressional Youth Advisory
+                                        Council</a></h3>
+                                <h4>Economic Affairs Subcommittee Student Advisor</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">Aug 2023 – May 2024</span>
+                                <span>U.S. House District 3</span>
+                            </div>
+                        </div>
                     </div>
                     <ul>
                         <li>Tracked and analyzed economic legislation like H.R. 7400 and its proposed 10% tax credit,
                             evaluating inflationary implications and formulating policy recommendations presented to
-                            Congressman Keith Self &amp; Plano ISD Trustee Board</li>
+                            Congressman Keith Self &amp; Plano ISD Trustee Board.</li>
                     </ul>
                 </article>
             </div>
         </section>
 
         <section id="education">
-            <h2 class="section-title">/roshan_realm/education</h2>
+            <h2 class="section-title" data-type="/roshan_realm/education">
+                <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">_</span>
+            </h2>
             <div class="stack">
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3>Dartmouth College</h3>
-                            <h4>B.A. in Economics &amp; Computer Science</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap is-light">
+                            <img class="entry-logo" src="assets.png/logos/dartmouth.png" alt="" aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>Hanover, New Hampshire</span><span class="date">2026 – 2030</span>
+                        <div class="entry-head">
+                            <div>
+                                <h3>Dartmouth College</h3>
+                                <h4>B.A. in Computer Science &amp; Economics</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">2026 – 2030</span>
+                                <span>Hanover, New Hampshire</span>
+                            </div>
                         </div>
                     </div>
                     <p class="details">
                         <strong>Honors:</strong> Coolidge Senator (Top 2% / &lt;100 nationwide) – Scholarship &amp;
                         Summit Recipient <br>
-                        <strong>Relevant Coursework:</strong> Accelerated Multivariable Calculus, Computing in
-                        Python, Statistics, Microeconomic Analysis, Single-variable Calculus
+                        <strong>Relevant Coursework:</strong> Linear Algebra, Data Structures & Object-Oriented Program,
+                        Accelerated Multivariable Calculus, Computing in Python,
+                        Statistics, Microeconomic Analysis
                     </p>
                 </article>
+
                 <article class="entry card">
-                    <div class="entry-head">
-                        <div>
-                            <h3>Plano West Senior High School</h3>
-                            <h4>High School Diploma</h4>
+                    <div class="entry-top">
+                        <div class="entry-logo-wrap is-light">
+                            <img class="entry-logo is-wide" src="assets.png/logos/planowest.png" alt=""
+                                aria-hidden="true">
                         </div>
-                        <div class="entry-side"><span>Plano, Texas</span><span class="date">2022 – 2026</span></div>
+                        <div class="entry-head">
+                            <div>
+                                <h3>Plano West Senior High School</h3>
+                                <h4>High School Diploma</h4>
+                            </div>
+                            <div class="entry-side">
+                                <span class="date">2022 – 2026</span>
+                                <span>Plano, Texas</span>
+                            </div>
+                        </div>
                     </div>
                     <p class="details">
-                        <strong>Academics:</strong> SAT: 1560 (790M / 770V) | Summa Cum Laude | Rank: Top ~3% /
-                        1200<br>
-                        <strong>AP Coursework (5s):</strong> Calc BC, Physics C Mechanics, Statistics,
-                        Macro/Microeconomics, English Literature/Language, Biology, US
-                        History, Human Geography, & Envir. Science
+                        <strong>Academics:</strong> SAT: 1560 (790M / 770V) | Summa Cum Laude | Rank: Top ~3% / 1200<br>
+                        <strong>AP Coursework (5s):</strong> Calculus BC, Physics C Mechanics, Statistics,
+                        Macroeconomics, Microeconomics,
+                        English Literature, English Language, Biology, US History, Human Geography, &amp;
+                        Environmental Science
                     </p>
                 </article>
             </div>
         </section>
 
         <section id="awards">
-            <h2 class="section-title">/roshan_realm/awards</h2>
+            <h2 class="section-title" data-type="/roshan_realm/awards">
+                <span class="typed-text"></span><span class="typed-cursor" aria-hidden="true">_</span>
+            </h2>
             <div class="grid-2">
 
                 <article class="award card">
