@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 })();
+
 (() => {
     const section = document.querySelector(".projects-carousel-section");
     if (!section) return;
@@ -259,7 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener("click", () => goTo(activeIndex + 1));
 
     slides.forEach((slide, idx) => {
-        slide.addEventListener("click", () => {
+        slide.addEventListener("click", (e) => {
+            if (e.target.closest("a")) return;
             if (Math.abs(deltaX) > 10) return;
             if (idx !== activeIndex) goTo(idx);
         });
@@ -276,21 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     viewport.addEventListener("pointerdown", (e) => {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    if (e.target.closest("a, button")) return;
-    isDragging = true;
-    startX = e.clientX;
-    deltaX = 0;
-    slides.forEach((s) => s.classList.add("is-dragging"));
-    viewport.setPointerCapture(e.pointerId);
-    });
-
-    slides.forEach((slide, idx) => {
-    slide.addEventListener("click", (e) => {
-        if (e.target.closest("a")) return;
-        if (Math.abs(draggedDistance) > 10) return;
-        if (idx !== activeIndex) goTo(idx);
-    });
+        if (e.pointerType === "mouse" && e.button !== 0) return;
+        if (e.target.closest("a, button")) return;
+        isDragging = true;
+        startX = e.clientX;
+        deltaX = 0;
+        viewport.setPointerCapture(e.pointerId);
     });
 
     viewport.addEventListener("pointermove", (e) => {
@@ -301,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function finishDrag() {
         if (!isDragging) return;
         isDragging = false;
-        slides.forEach((s) => s.classList.remove("is-dragging"));
 
         if (deltaX < -55) goTo(activeIndex + 1);
         else if (deltaX > 55) goTo(activeIndex - 1);
